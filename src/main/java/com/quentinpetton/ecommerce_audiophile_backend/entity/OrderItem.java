@@ -3,28 +3,27 @@ package com.quentinpetton.ecommerce_audiophile_backend.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-
 @Entity
-@Table(name = "orders")
+@Table(name = "order_items")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Order {
+public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer totalPrice;
-    private String status;
+    private Integer quantity;
+    private Integer unitPrice;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "order_id")
+    private Order order;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "order")
-    private List<OrderItem> orderItems;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 }
