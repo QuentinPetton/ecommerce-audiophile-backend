@@ -3,6 +3,8 @@ package com.quentinpetton.ecommerce_audiophile_backend.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "products")
 @Getter
@@ -35,4 +37,7 @@ public class Product {
 
     @Column (columnDefinition = "TEXT")
     private String features;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
+    private List <ProductImage> productImages;
 }
