@@ -40,4 +40,7 @@ public class Product {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
     private List <ProductImage> productImages;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
+    private List <ProductInclude> productIncludes;
 }
