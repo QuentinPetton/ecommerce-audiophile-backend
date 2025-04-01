@@ -1,0 +1,34 @@
+DROP TABLE IF EXISTS "users"
+CREATE TABLE "users" (
+    "id" SERIAL PRIMARY KEY,
+    "email" VARCHAR(255) UNIQUE NOT NULL,
+    "password" VARCHAR(255) NOT NULL,
+    "first_name" VARCHAR(255),
+    "last_name" VARCHAR(255),
+    "phone_number" INTEGER,
+    "address_number" VARCHAR(255),
+    "address_street" VARCHAR(255),
+    "address_city" VARCHAR(255),
+    "address_country" VARCHAR(255),
+    "address_zip" INTEGER,
+    "cgu_enabled" BOOLEAN,
+    "created_at" TIMESTAMP,
+);
+
+DROP TABLE IF EXISTS "products"
+CREATE TABLE "products" (
+    "id" SERIAL PRIMARY KEY,
+    "slug" VARCHAR(255) UNIQUE NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+    "category" VARCHAR(255),
+    "is_new" BOOLEAN,
+    "price" INTEGER,
+    "description" VARCHAR(255),
+    "features" VARCHAR(255),
+);
+
+DROP TABLE IF EXISTS "product_images"
+CREATE TABLE "products_images"(
+    "id" SERIAL PRIMARY KEY,
+
+)
