@@ -23,13 +23,8 @@ public class Product {
     @Column (nullable = false)
     private String name;
 
-    @Column
     private String category;
-
-    @Column
     private boolean isNew;
-
-    @Column
     private Integer price;
 
     @Column (columnDefinition = "TEXT")

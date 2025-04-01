@@ -3,6 +3,7 @@ package com.quentinpetton.ecommerce_audiophile_backend.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -26,16 +27,17 @@ public class User {
 
     private String firstName;
     private String lastName;
-    private String phone_number;
-    private String address_number;
-    private String address_street;
-    private String address_city;
-    private String address_country;
-    private String address_zip;
-    private boolean cgu_enabled;
+    private LocalDateTime createdAt = LocalDateTime.now();
+    private String phoneNumber;
+    private String addressNumber;
+    private String addressStreet;
+    private String addressCity;
+    private String addressCountry;
+    private String addressZip;
+    private boolean cguEnabled;
 
     //todo: faire point sur cascadeType ici
     @OneToMany(cascade=CascadeType.ALL, mappedBy = "user")
-    private List<Order> Orders;
+    private List<Order> orders;
 
 }
