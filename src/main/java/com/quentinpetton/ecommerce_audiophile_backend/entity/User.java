@@ -27,7 +27,6 @@ public class User {
 
     private String firstName;
     private String lastName;
-    private LocalDateTime createdAt = LocalDateTime.now();
     private String phoneNumber;
     private String addressNumber;
     private String addressStreet;
@@ -35,8 +34,8 @@ public class User {
     private String addressCountry;
     private String addressZip;
     private boolean cguEnabled;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-    //todo: faire point sur cascadeType ici
     @OneToMany(cascade=CascadeType.ALL, mappedBy = "user")
     private List<Order> orders;
 
