@@ -30,5 +30,17 @@ CREATE TABLE "products" (
 DROP TABLE IF EXISTS "product_images"
 CREATE TABLE "products_images"(
     "id" SERIAL PRIMARY KEY,
+    "product_id" INTEGER REFERENCES products(id) ON DELETE CASCADE,
+    "type" VARCHAR(255),
+    "image_mobile" VARCHAR(255),
+    "image_tablet" VARCHAR(255),
+    "image_desktop" VARCHAR(255)
+);
 
-)
+DROP TABLE IF EXISTS "product_includes"
+CREATE TABLE "product_includes"(
+    "id" SERIAL PRIMARY KEY,
+    "product_id" INTEGER REFERENCES products(id) ON DELETE CASCADE,
+    "quantity" INTEGER,
+    "item" VARCHAR(255),
+);
