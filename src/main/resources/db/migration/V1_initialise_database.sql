@@ -48,10 +48,28 @@ CREATE TABLE "product_includes"(
 DROP TABLE IF EXISTS "product_others"
 CREATE TABLE "product_others"(
     "id" SERIAL PRIMARY KEY,
-    "product_id" INTEGER REFERENCES  products(id) ON DELETE CASCADE,
+    "product_id" INTEGER REFERENCES products(id) ON DELETE CASCADE,
     "other_slug" VARCHAR(255),
     "other_name" VARCHAR(255),
     "image_mobile" VARCHAR(255),
     "image_table" VARCHAR(255),
     "image_desktop" VARCHAR(255)
+);
+
+DROP TABLE IF EXISTS "orders"
+CREATE TABLE "orders"(
+    "id" SERIAL PRIMARY KEY,
+    "user_id" INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    "total_price" INTEGER,
+    "status" VARCHAR(255),
+    "created_at" TIMESTAMP
+);
+
+DROP TABLE IF EXISTS "order_items"
+CREATE TABLE "order_items"(
+    "id" SERIAL PRIMARY KEY,
+    "order_id" INTEGER REFERENCES orders(id) ON DELETE CASCADE,
+    "product_id" INTEGER REFERENCES products(id) ON DELETE CASCADE,
+    "quantity" INTEGER,
+    "unit_price" INTEGER
 );
