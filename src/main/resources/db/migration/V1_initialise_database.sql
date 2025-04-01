@@ -44,3 +44,14 @@ CREATE TABLE "product_includes"(
     "quantity" INTEGER,
     "item" VARCHAR(255),
 );
+
+DROP TABLE IF EXISTS "product_others"
+CREATE TABLE "product_others"(
+    "id" SERIAL PRIMARY KEY,
+    "product_id" INTEGER REFERENCES  products(id) ON DELETE CASCADE,
+    "other_slug" VARCHAR(255),
+    "other_name" VARCHAR(255),
+    "image_mobile" VARCHAR(255),
+    "image_table" VARCHAR(255),
+    "image_desktop" VARCHAR(255)
+);
