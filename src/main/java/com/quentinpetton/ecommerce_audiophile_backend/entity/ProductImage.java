@@ -15,7 +15,6 @@ public class ProductImage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    // for mainImage, categoryImage, gallery(first to third)
     private String type;
     private String imageMobile;
     private String imageTablet;
