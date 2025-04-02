@@ -55,9 +55,16 @@
 			<artifactId>flyway-core</artifactId>
 			<version>9.22.3</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct -->
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.6.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>1.18.38</version>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
@@ -75,7 +82,13 @@
 				<configuration>
 					<annotationProcessorPaths>
 						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>1.6.0</version>
+						</path>
+						<path>
 							<groupId>org.projectlombok</groupId>
+							<version>1.18.38</version>
 							<artifactId>lombok</artifactId>
 						</path>
 					</annotationProcessorPaths>
