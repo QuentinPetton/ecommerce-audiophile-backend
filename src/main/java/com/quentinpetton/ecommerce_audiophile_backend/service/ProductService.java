@@ -16,8 +16,10 @@ public class ProductService {
     private final ProductMapper productMapper;
 
     public List<ProductDto> getAllProducts() {
-        return productMapper.toDtoList(productRepository.findAll());
+        List<Product> products = productRepository.findAll();
+        return productMapper.toDtoList(products);
     }
+
     public ProductDto getProductById(Long id) {
         Product product = productRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("Product not found with id: " + id));
