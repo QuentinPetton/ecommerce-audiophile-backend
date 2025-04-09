@@ -1,9 +1,18 @@
 package com.quentinpetton.ecommerce_audiophile_backend.dto.product;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
  * DTO for {@link com.quentinpetton.ecommerce_audiophile_backend.entity.ProductImage}
  */
-public record ProductImageDto(Long id, String type, String imageMobile, String imageTablet, String imageDesktop) implements Serializable {
+@Data
+public class
+ProductImageDto implements Serializable {
+  private Long id;
+  private String type;
+  private String imageMobile;
+  private String imageTablet;
+  private String imageDesktop;
   }
