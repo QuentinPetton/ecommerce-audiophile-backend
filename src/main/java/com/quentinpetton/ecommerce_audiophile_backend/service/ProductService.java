@@ -20,9 +20,15 @@ public class ProductService {
         return productMapper.toDtoList(products);
     }
 
-    public ProductDto getProductById(Long id) {
-        Product product = productRepository.findById(id)
-                .orElseThrow(()-> new RuntimeException("Product not found with id: " + id));
+    public ProductDto getProductBySlug(String slug) {
+        Product product = productRepository.findBySlug(slug)
+                .orElseThrow(()-> new RuntimeException("Product not found with slug: " + slug));
         return productMapper.toDto(product);
     }
+// Later for back office
+//    public ProductDto getProductById(Long id) {
+//        Product product = productRepository.findById(id)
+//                .orElseThrow(()-> new RuntimeException("Product not found with id: " + id));
+//        return productMapper.toDto(product);
+//    }
 }
