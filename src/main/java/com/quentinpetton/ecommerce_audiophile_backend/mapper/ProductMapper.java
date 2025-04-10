@@ -9,7 +9,8 @@ import java.util.List;
 @Mapper (componentModel = "spring", uses = {
         ProductImageMapper.class,
         ProductIncludeMapper.class,
-        ProductOtherMapper.class
+        ProductOtherMapper.class,
+        CategoryMapper.class
 })
 public interface ProductMapper {
     ProductDto toDto (Product product);

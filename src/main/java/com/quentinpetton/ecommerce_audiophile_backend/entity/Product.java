@@ -23,7 +23,6 @@ public class Product {
     @Column (nullable = false)
     private String name;
 
-    private String category;
     private boolean isNew;
     private Integer price;
 
@@ -41,4 +40,8 @@ public class Product {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
     private List <ProductOther> others;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 }

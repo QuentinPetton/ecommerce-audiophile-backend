@@ -1,8 +1,8 @@
 -- YX1 Wireless Earphones
-INSERT INTO products (slug, name, category, is_new, price, description, features) VALUES(
+INSERT INTO products (slug, name, category_id, is_new, price, description, features) VALUES(
                                                                                              'yx1-earphones',
                                                                                              'YX1 Wireless Earphones',
-                                                                                             'earphones',
+                                                                                             3,
                                                                                              TRUE,
                                                                                              599,
                                                                                              'Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.',
@@ -56,10 +56,10 @@ INSERT INTO product_others (product_id, other_slug, other_name, image_mobile, im
 SELECT id, 'zx9-speaker', 'ZX9 Speaker', './assets/shared/mobile/image-zx9-speaker.jpg', './assets/shared/tablet/image-zx9-speaker.jpg', './assets/shared/desktop/image-zx9-speaker.jpg' FROM products WHERE slug = 'yx1-earphones';
 
 -- XX59 Headphones
-INSERT INTO products (slug, name, category, is_new, price, description, features) VALUES (
+INSERT INTO products (slug, name, category_id, is_new, price, description, features) VALUES (
                                                                                              'xx59-headphones',
                                                                                              'XX59 Headphones',
-                                                                                             'headphones',
+                                                                                             1,
                                                                                              FALSE,
                                                                                              899,
                                                                                              'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.',
@@ -110,10 +110,10 @@ INSERT INTO product_others (product_id, other_slug, other_name, image_mobile, im
 SELECT id, 'zx9-speaker', 'ZX9 Speaker', './assets/shared/mobile/image-zx9-speaker.jpg', './assets/shared/tablet/image-zx9-speaker.jpg', './assets/shared/desktop/image-zx9-speaker.jpg' FROM products WHERE slug = 'xx59-headphones';
 
 -- XX99 Mark I Headphones
-INSERT INTO products (slug, name, category, is_new, price, description, features) VALUES (
+INSERT INTO products (slug, name, category_id, is_new, price, description, features) VALUES (
                                                                                              'xx99-mark-one-headphones',
                                                                                              'XX99 Mark I Headphones',
-                                                                                             'headphones',
+                                                                                             1,
                                                                                              FALSE,
                                                                                              1750,
                                                                                              'As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.',
@@ -164,10 +164,10 @@ INSERT INTO product_others (product_id, other_slug, other_name, image_mobile, im
 SELECT id, 'zx9-speaker', 'ZX9 Speaker', './assets/shared/mobile/image-zx9-speaker.jpg', './assets/shared/tablet/image-zx9-speaker.jpg', './assets/shared/desktop/image-zx9-speaker.jpg' FROM products WHERE slug = 'xx99-mark-one-headphones';
 
 -- XX99 Mark II Headphones
-INSERT INTO products (slug, name, category, is_new, price, description, features) VALUES (
+INSERT INTO products (slug, name, category_id, is_new, price, description, features) VALUES (
                                                                                              'xx99-mark-two-headphones',
                                                                                              'XX99 Mark II Headphones',
-                                                                                             'headphones',
+                                                                                             1,
                                                                                              TRUE,
                                                                                              2999,
                                                                                              'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.',
@@ -221,10 +221,10 @@ INSERT INTO product_others (product_id, other_slug, other_name, image_mobile, im
 SELECT id, 'zx9-speaker', 'ZX9 Speaker', './assets/shared/mobile/image-zx9-speaker.jpg', './assets/shared/tablet/image-zx9-speaker.jpg', './assets/shared/desktop/image-zx9-speaker.jpg' FROM products WHERE slug = 'xx99-mark-two-headphones';
 
 -- ZX7 Speaker
-INSERT INTO products (slug, name, category, is_new, price, description, features) VALUES (
+INSERT INTO products (slug, name, category_id, is_new, price, description, features) VALUES (
                                                                                              'zx7-speaker',
                                                                                              'ZX7 Speaker',
-                                                                                             'speakers',
+                                                                                             2,
                                                                                              FALSE,
                                                                                              3500,
                                                                                              'Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.',
@@ -278,10 +278,10 @@ INSERT INTO product_others (product_id, other_slug, other_name, image_mobile, im
 SELECT id, 'xx59-headphones', 'XX59', './assets/shared/mobile/image-xx59-headphones.jpg', './assets/shared/tablet/image-xx59-headphones.jpg', './assets/shared/desktop/image-xx59-headphones.jpg' FROM products WHERE slug = 'zx7-speaker';
 
 -- ZX9 Speaker
-INSERT INTO products (slug, name, category, is_new, price, description, features) VALUES (
+INSERT INTO products (slug, name, category_id, is_new, price, description, features) VALUES (
                                                                                              'zx9-speaker',
                                                                                              'ZX9 Speaker',
-                                                                                             'speakers',
+                                                                                             2,
                                                                                              TRUE,
                                                                                              4500,
                                                                                              'Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.',
