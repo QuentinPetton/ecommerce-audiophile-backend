@@ -15,12 +15,20 @@ CREATE TABLE "users" (
     "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+DROP TABLE IF EXISTS categories;
+CREATE TABLE categories (
+    id SERIAL PRIMARY KEY,
+    slug VARCHAR(255) UNIQUE NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    thumbnail VARCHAR(255)
+);
+
 DROP TABLE IF EXISTS "products";
 CREATE TABLE "products" (
     "id" SERIAL PRIMARY KEY,
     "slug" VARCHAR(255) UNIQUE NOT NULL,
     "name" VARCHAR(255) NOT NULL,
-    "category" VARCHAR(255),
+    "category_id" INTEGER REFERENCES categories(id) ON DELETE CASCADE ,
     "is_new" BOOLEAN DEFAULT FALSE,
     "price" INTEGER,
     "description" TEXT,

@@ -13,7 +13,7 @@ public class ProductDto implements Serializable {
   private Long id;
   private String slug;
   private String name;
-  private String category;
+  private CategoryDto category;
   private boolean isNew;
   private Integer price;
   private String description;
