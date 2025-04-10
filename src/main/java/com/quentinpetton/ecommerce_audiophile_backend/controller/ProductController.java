@@ -23,8 +23,15 @@ public class ProductController {
         return ResponseEntity.ok(productService.getAllProducts());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ProductDto> getProductById(@PathVariable Long id) {
-        return ResponseEntity.ok(productService.getProductById(id));
+
+    @GetMapping("/{slug}")
+    public ResponseEntity<ProductDto> getProductBySlug(@PathVariable String slug) {
+        return ResponseEntity.ok(productService.getProductBySlug(slug));
     }
+
+    //Later for back office
+//    @GetMapping("/{id}")
+//    public ResponseEntity<ProductDto> getProductById(@PathVariable Long id) {
+//        return ResponseEntity.ok(productService.getProductById(id));
+//    }
 }
