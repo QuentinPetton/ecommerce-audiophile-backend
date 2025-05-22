@@ -29,6 +29,11 @@ public class ProductController {
         return ResponseEntity.ok(productService.getProductBySlug(slug));
     }
 
+    @GetMapping("/category/{slug}")
+    public ResponseEntity<List<ProductDto>> getProductsByCategorySlug(@PathVariable String slug) {
+        return ResponseEntity.ok(productService.getProductsByCategory(slug));
+    }
+
     //Later for back office
 //    @GetMapping("/{id}")
 //    public ResponseEntity<ProductDto> getProductById(@PathVariable Long id) {

@@ -1,6 +1,7 @@
 package com.quentinpetton.ecommerce_audiophile_backend.service;
 
 import com.quentinpetton.ecommerce_audiophile_backend.dto.product.ProductDto;
+import com.quentinpetton.ecommerce_audiophile_backend.entity.Category;
 import com.quentinpetton.ecommerce_audiophile_backend.entity.Product;
 import com.quentinpetton.ecommerce_audiophile_backend.mapper.ProductMapper;
 import com.quentinpetton.ecommerce_audiophile_backend.repository.ProductRepository;
@@ -25,6 +26,14 @@ public class ProductService {
                 .orElseThrow(()-> new RuntimeException("Product not found with slug: " + slug));
         return productMapper.toDto(product);
     }
+
+    public List<ProductDto> getProductsByCategory(String slug) {
+        List<Product> products = productRepository.findByCategorySlug(slug);
+                return productMapper.toDtoList(products);
+    }
+
+
+
 // Later for back office
 //    public ProductDto getProductById(Long id) {
 //        Product product = productRepository.findById(id)
